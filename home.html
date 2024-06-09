@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Battle of Faeroun</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+</head>
+<body>
+    <audio id="myAudio" src="musique.mp3"></audio>
+    <button id="stopButton">
+        <img id="mute" src="images/mute.png" style="cursor: pointer;">
+        
+    </button>
+    <button onclick="executeTurn()" id="btn-jeux" >Jouer un tour </button>
+    <table id="myTable">
+        <tr>
+            <td class="square" id="square-0"></td>
+            <td class="square" id="square-1"></td>
+            <td class="square" id="square-2"></td>
+            <td class="square" id="square-3"></td>
+            <td class="square" id="square-4"></td>
+        </tr>
+    </table>
+    <div id="chefnainImage">
+        <img src="images/red.png" alt="Nain" class="icon">
+    </div>
+    <button onmouseover="afficherQueueNames('Rouge')" onclick="afficherImagesrouge()" id="btn1" >Entrainer</button>
+    <button onmouseover="afficherQueueNames('Bleu')" onclick="afficherImagesbleu()" id="btn2" >Entrainer</button>
+
+    <!-- Modal for training red warriors -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="fermerModal('myModal')">&times;</span>
+            <h1 style="text-align: center; color:brown">Entraîner les guerriers rouges</h1>
+            <h2>Nombre de ressources : <span id="resourceCountRed">3</span></h2>
+            <div class="image-container">
+                <div class="image-label-container">
+                    <button onclick="trainWarriors(1, 'Rouge')">
+                        <img src="images/red.png" alt="Chef Nain" class="icon">
+                    </button>
+                    <label>Chef Nain (3 ressources)</label>
+                </div>
+                <div class="image-label-container">
+                    <button onclick="trainWarriors(2, 'Rouge')">
+                        <img src="images/4.png" alt="Nain" class="icon">
+                    </button>
+                    <label>Nain (1 ressource)</label>
+                </div>
+                <div class="image-label-container">
+                    <button onclick="trainWarriors(3, 'Rouge')">
+                        <img src="images/8.png" alt="Chef Elfe" class="icon">
+                    </button>
+                    <label>Chef Elfe (4 ressources)</label>
+                </div>
+                <div class="image-label-container">
+                    <button onclick="trainWarriors(4, 'Rouge')">
+                        <img src="images/6.png" alt="Elfe" class="icon">
+                    </button>
+                    <label>Elfe (2 ressources)</label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for training blue warriors -->
+    <div id="myModal1" class="modal1">
+        <div class="modal-content">
+            <span class="close" onclick="fermerModal('myModal1')">&times;</span>
+            <h1 style="text-align: center; color:blue">Entraîner les guerriers bleus</h1>
+            <h2>Nombre de ressources : <span id="resourceCountBlue">3</span></h2>
+            <div class="image-container">
+                <div class="image-label-container">
+                    <button onclick="trainWarriors(1, 'Bleu')">
+                        <img src="images/3.png" alt="Chef Nain" class="icon">
+                    </button>
+                    <label>Chef Nain (3 ressources)</label>
+                </div>
+                <div class="image-label-container">
+                    <button onclick="trainWarriors(2, 'Bleu')">
+                        <img src="images/5.png" alt="Nain" class="icon">
+                    </button>
+                    <label>Nain (1 ressource)</label>
+                </div>
+                <div class="image-label-container">
+                    <button onclick="trainWarriors(3, 'Bleu')">
+                        <img src="images/9.png" alt="Chef Elfe" class="icon">
+                    </button>
+                    <label>Chef Elfe (4 ressources)</label>
+                </div>
+                <div class="image-label-container">
+                    <button onclick="trainWarriors(4, 'Bleu')">
+                        <img src="images/7.png" alt="Elfe" class="icon">
+                    </button>
+                    <label>Elfe (2 ressources)</label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
